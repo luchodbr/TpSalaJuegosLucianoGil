@@ -1,0 +1,18 @@
+<body>
+    <div id="container-fluid">
+        <form class="form-login" id="form" [formGroup]="loginForm">
+            <label for="email">Email</label><br>
+            <input type="text" id="email" name="email" required [value]="this.f['email'].value"
+                formControlName="email"><br>
+            <label for="password">Password</label><br>
+            <input type="password" id="password" name="password" [value]="this.f['password'].value"
+                formControlName="password"><br><br>
+            <button (click)="clickLogin()">Login</button>
+            <label [routerLink]="['/register']">No tengo cuenta</label>
+            <button (click)="clickAutoLogin()">No tengo cuenta y no quiero tenerla</button>
+
+        </form>
+
+        <div id="error"></div>
+    </div>
+</body>

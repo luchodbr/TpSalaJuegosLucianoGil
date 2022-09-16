@@ -1,0 +1,39 @@
+<div class="container-fluid nav-style">
+    <div class="card">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Games Room</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" routerLink="games">Games</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="whoim">WhoIm</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="chat">Chat</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " routerLink="pricing">Pricing</a>
+                        </li>
+                    </ul>
+                    <form action="">
+                        <button class="btn btn-primary" [routerLink]="['/login']"
+                            *ngIf="(this.isLoged$|async) == false">
+                            login
+                        </button>
+                        <button class="btn btn-primary" (click)="logOut()" *ngIf="(this.isLoged$|async) == true">
+                            Logout
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+    </div>
+</div>

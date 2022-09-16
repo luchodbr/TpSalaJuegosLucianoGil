@@ -1,0 +1,20 @@
+<body>
+    <div id="container-fluid">
+        <form class="form-login" [formGroup]="loginForm">
+            <label for="email">Email</label><br>
+            <input type="text" [value]="this.f['email'].value" formControlName="email" required><br>
+            <label for="password">Password</label><br>
+            <input type="password" [value]="this.f['password'].value" formControlName="password"><br><br>
+            <label for="password">Confirm Password</label><br>
+            <input type="password" [value]="this.f['confirmPass'].value.confirmPass"
+                formControlName="confirmPass"><br><br>
+            <button type="submit" (click)="clickRegister()">Register</button>
+
+        </form>
+        <div id="error"></div>
+    </div>
+    <script src="login.js"></script>
+</body>
+<p-dialog [(visible)]="display">
+    <h1>Usuario ya existente</h1>
+</p-dialog>
