@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: "register", component: RegisterComponent },
   { path: "whoim", component: WhoiamComponent },
   { path: "chat", component: ChatComponent },
-  { path: "hangman", component: HangmanComponent },
+  { path: "games", component: HangmanComponent },
   { path: "**", redirectTo: "" }
 
 ];
