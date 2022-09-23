@@ -1,0 +1,31 @@
+<header class="page-header">
+    <div class="container ">
+        <h2>Global Chat</h2>
+    </div>
+</header>
+<div class="main">
+    <div class="container">
+        <div class="chat-log">
+            <div class="chat-log__item" *ngFor="let msg of this.msgs">
+                <h3 class="chat-log__author">{{msg.user}} <small class="chat-log__date">{{msg.hour}}</small>
+                </h3>
+                <div class="chat-log__message"> {{msg.message}} </div>
+            </div>
+        </div>
+    </div>
+    <div class="chat-form">
+        <div class="container">
+            <form class="form-horizontal" (ngSubmit)="submit()">
+                <div class="row">
+                    <div class="col-sm-10 col-xs-8">
+                        <input type="input" class="form-control" id="message" placeholder="Message"
+                            [(ngModel)]="this.message.message" [ngModelOptions]="{standalone: true}" required />
+                    </div>
+                    <div class="col-sm-2 col-xs-4">
+                        <button type="submit" class="btn btn-success btn-block">Send</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

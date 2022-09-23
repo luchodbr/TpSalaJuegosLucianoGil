@@ -9,8 +9,10 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
+
                         <li class="nav-item">
-                            <a class="nav-link active" routerLink="games">Games</a>
+                            <ul class="nav-link dropdown dropbtn " routerLink="games">Games</ul>
+
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" routerLink="whoim">WhoIm</a>
@@ -21,7 +23,21 @@
                         <li class="nav-item">
                             <a class="nav-link " routerLink="pricing">Pricing</a>
                         </li>
+
+                        <!-- <div class="dropdown show">
+                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Dropdown link
+                            </a>
+
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </div> -->
                     </ul>
+
                     <form action="">
                         <button class="btn btn-primary" [routerLink]="['/login']"
                             *ngIf="(this.isLoged$|async) == false">

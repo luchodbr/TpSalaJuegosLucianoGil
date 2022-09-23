@@ -10,6 +10,8 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class FireAuthService {
 
   public logged: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  public user: any;
+
   constructor(private firebase: AngularFireAuth) { }
 
   Register(user: User) {

@@ -24,6 +24,8 @@ export class LoginComponent implements OnInit {
     try {
       this.auth.Login(this.f['email'].value, this.f['password'].value);
       await this.afs.setObj("userLogs", { user: this.f['email'].value, fecha: new Date() });
+      this.auth.user = this.f['email'].value.split("@")[0];
+
       this.route.navigateByUrl("");
 
     } catch (error) {
@@ -36,6 +38,7 @@ export class LoginComponent implements OnInit {
     this.f['password'].setValue("123456");
     this.clickLogin();
   }
+
   get f(): { [key: string]: AbstractControl } {
     return this.loginForm.controls;
   }
