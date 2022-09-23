@@ -15,10 +15,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { WhoiamComponent } from './Pages/whoiam/whoiam.component';
 import { DialogModule } from 'primeng/dialog';
 import { RegisterDialogComponent } from './Pages/register-dialog/register-dialog.component';
-import { HangmanComponent } from './Pages/games/hangman/hangman.component';
-import { HangmanDisplayComponent } from './Pages/games/hangman/hangman-display/hangman-display.component';
-import { HangmanKeyboardComponent } from './Pages/games/hangman/hangman-keyboard/hangman-keyboard.component';
-import { HangmanQuestionComponent } from './Pages/games/hangman/hangman-question/hangman-question.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ChatComponent } from './Pages/chat/chat.component';
 
@@ -33,12 +29,7 @@ import { ChatComponent } from './Pages/chat/chat.component';
     RegisterComponent,
     WhoiamComponent,
     RegisterDialogComponent,
-    HangmanComponent,
-    HangmanDisplayComponent,
-    HangmanKeyboardComponent,
-    HangmanQuestionComponent,
     ChatComponent
-
   ],
   imports: [
     BrowserModule,

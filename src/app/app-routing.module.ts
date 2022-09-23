@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ChatComponent } from './Pages/chat/chat.component';
-import { HangmanComponent } from './Pages/games/hangman/hangman.component';
+import { GamesComponent } from './Pages/games/games.component';
+import { GamesModule } from './Pages/games/games.module';
 import { HomeComponent } from './Pages/home/home.component';
 import { LoginComponent } from './Pages/login/login.component';
 import { RegisterComponent } from './Pages/register/register.component';
@@ -13,7 +14,7 @@ const routes: Routes = [
   { path: "register", component: RegisterComponent },
   { path: "whoim", component: WhoiamComponent },
   { path: "chat", component: ChatComponent },
-  { path: "games", component: HangmanComponent },
+  { path: "games", component: GamesComponent, loadChildren: () => import('./Pages/games/games.module').then(m => m.GamesModule) },
   { path: "**", redirectTo: "" }
 
 ];
