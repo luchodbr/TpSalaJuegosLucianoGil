@@ -6,6 +6,8 @@ import { HangmanKeyboardComponent } from './hangman/hangman-keyboard/hangman-key
 import { HangmanQuestionComponent } from './hangman/hangman-question/hangman-question.component';
 import { HigherorlowerComponent } from './higher-or-lower/higher-or-lower.component';
 import { GamesRoutingModule } from './games-routing.module';
+import { GamesComponent } from './games.component';
+import { SnakeComponent } from './snake/snake.component';
 
 
 
@@ -15,7 +17,9 @@ import { GamesRoutingModule } from './games-routing.module';
     HangmanDisplayComponent,
     HangmanKeyboardComponent,
     HangmanQuestionComponent,
-    HigherorlowerComponent
+    HigherorlowerComponent,
+    GamesComponent,
+    SnakeComponent
   ],
   imports: [
     CommonModule,

@@ -14,7 +14,11 @@ const routes: Routes = [
   { path: "register", component: RegisterComponent },
   { path: "whoim", component: WhoiamComponent },
   { path: "chat", component: ChatComponent },
-  { path: "games", component: GamesComponent, loadChildren: () => import('./Pages/games/games.module').then(m => m.GamesModule) },
+  {
+    path: "games", children: [{
+      path: '', loadChildren: () => import('./Pages/games/games.module').then(m => m.GamesModule)
+    }]
+  },
   { path: "**", redirectTo: "" }
 
 ];
