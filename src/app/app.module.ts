@@ -17,6 +17,7 @@ import { DialogModule } from 'primeng/dialog';
 import { RegisterDialogComponent } from './Pages/register-dialog/register-dialog.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ChatComponent } from './Pages/chat/chat.component';
+import { TableResultComponent } from './table-result/table-result.component';
 
 
 

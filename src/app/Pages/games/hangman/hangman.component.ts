@@ -4,6 +4,7 @@ import { FireAuthService } from 'src/app/services/fire-auth.service';
 import { FireStoreService } from 'src/app/services/fire-store.service';
 import { HangmanService } from 'src/app/services/hangman-service.service';
 import { Guid } from 'guid-typescript';
+import { GamesService } from 'src/app/services/games.service';
 
 @Component({
   selector: 'app-hangman',
@@ -21,7 +22,7 @@ export class HangmanComponent implements OnInit {
   listResults!: any[];
   constructor(
     private hangmanService: HangmanService,
-    private afs: FireStoreService,
+    private afs: GamesService,
     private auth: FireAuthService
   ) { }
 

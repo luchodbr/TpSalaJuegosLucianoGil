@@ -16,12 +16,11 @@ export class FireStoreService {
   setObj(entidad: string, obj: any, id: string = obj.id) {
     return this.afs.collection(entidad).doc(id).set(obj, { merge: true });
   }
+
   getWithFilter(entidad: string, campo: string, value: any) {
     return this.afs.collection(entidad, ref => ref.where(campo, '==', value)).valueChanges();
   }
-  getGameResult(game: string) {
-    return this.afs.collection('results', ref => ref.where('game', '==', game)).valueChanges();
-  }
+
 
   setMessege(message: any) {
     return this.afs.collection('ChatStorage').add({

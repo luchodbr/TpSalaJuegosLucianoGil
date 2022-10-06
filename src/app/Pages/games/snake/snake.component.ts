@@ -2,6 +2,10 @@ import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Food } from "./game-engine/food";
 import { Snake } from "./game-engine/snake";
 import { outsideGrid } from "./game-engine/gameboard-grid.util";
+import { GamesService } from 'src/app/services/games.service';
+import { Results } from 'src/app/models/results';
+import { Guid } from 'guid-typescript';
+import { FireAuthService } from 'src/app/services/fire-auth.service';
 
 @Component({
   selector: 'app-snake',
@@ -13,8 +17,14 @@ export class SnakeComponent implements OnInit {
   gameBoard: any;
   snake = new Snake();
   food = new Food(this.snake);
+  listResults!: Results[] | any[];
+  results: Results | any;
 
-
+  constructor(private afs: GamesService, private auth: FireAuthService) {
+    this.afs.getGameResult("Snake").subscribe(x => {
+      this.listResults = x as any[];
+    });
+  }
   lastRenderTime = 0
   gameOver = false
 
@@ -25,6 +35,9 @@ export class SnakeComponent implements OnInit {
 
   ngOnInit(): void {
     this.snake.listenToInputs();
+    this.afs.getGameResult("HoL").subscribe(x => {
+      this.listResults = x as any[];
+    });
   }
   dpadMovement(direction: string) {
     this.snake.input.setDirection(direction);
@@ -33,6 +46,17 @@ export class SnakeComponent implements OnInit {
 
   start(currentTime: any) {
     if (this.gameOver) {
+      this.results = {
+        id: Guid.create().toString(),
+        game: "Snake",
+        score: this.food.currentScore.toString(),
+        user: this.auth.user
+      };
+
+
+      this.afs.setObj("results", this.results).then(x => {
+
+      });
       return console.log('Game Over');
     }
 

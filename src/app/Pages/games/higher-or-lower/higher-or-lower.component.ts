@@ -3,6 +3,7 @@ import Swal from 'sweetalert2';
 import { Guid } from 'guid-typescript';
 import { FireStoreService } from 'src/app/services/fire-store.service';
 import { FireAuthService } from 'src/app/services/fire-auth.service';
+import { GamesService } from 'src/app/services/games.service';
 
 @Component({
   selector: 'app-higherorlower',
@@ -23,7 +24,7 @@ export class HigherorlowerComponent implements OnInit {
   results!: any;
   listResults!: any[];
 
-  constructor(private afs: FireStoreService, private auth: FireAuthService) { }
+  constructor(private afs: GamesService, private auth: FireAuthService) { }
 
   ngOnInit(): void {
     this.afs.getGameResult("HoL").subscribe(x => {
@@ -72,7 +73,7 @@ export class HigherorlowerComponent implements OnInit {
               id: Guid.create().toString(),
               game: "HoL",
               score: this.respuestasCorrectas.toString(),
-              user: this.auth.user.displayName
+              user: this.auth.user
             }
 
             this.afs.setObj("results", this.results).then(x => {

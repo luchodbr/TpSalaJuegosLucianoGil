@@ -1,0 +1,17 @@
+<div class="score">
+    <h2 class="count">Correct answer: {{respuestasCorrectas}}</h2>
+</div>
+<div class="tabla">
+    <app-table-result *ngIf="listResults" [listResult]="listResults"></app-table-result>
+</div>
+<div class="container">
+    <div class="row text-center">
+        <div class="col-md-12 mt-1">
+            <div class="vara"></div>
+            <img #ruleta src="../../../../assets/ruleta.png" class="img-fluid">
+        </div>
+    </div>
+</div>
+<button class="button button--orange" type="button" (click)="girar()">
+    Play
+</button>

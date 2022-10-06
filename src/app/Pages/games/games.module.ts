@@ -8,6 +8,8 @@ import { HigherorlowerComponent } from './higher-or-lower/higher-or-lower.compon
 import { GamesRoutingModule } from './games-routing.module';
 import { GamesComponent } from './games.component';
 import { SnakeComponent } from './snake/snake.component';
+import { TriviaComponent } from './guest2/trivia/trivia.component';
+import { TableResultComponent } from 'src/app/table-result/table-result.component';
 
 
 
@@ -19,11 +21,14 @@ import { SnakeComponent } from './snake/snake.component';
     HangmanQuestionComponent,
     HigherorlowerComponent,
     GamesComponent,
-    SnakeComponent
+    SnakeComponent,
+    TriviaComponent,
+    TableResultComponent
   ],
   imports: [
     CommonModule,
     GamesRoutingModule
+
   ]
 })
 export class GamesModule { }
